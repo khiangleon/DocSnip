@@ -1,3 +1,8 @@
+DocSnip is intended to be a document snipping tool that has in-built memory storage properties and OCR functionalities, with a user-friendly GUI for easy-to-use and accurate data extraction.
+
+DocSnip is modified from the existing Briss 2.0 PDF cropping tool.
+
+
 # Briss 2.0
 
 Briss 2.0 is intended to be a GUI Update for the Briss PDF cropping tool.
