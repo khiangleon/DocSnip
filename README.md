@@ -9,14 +9,32 @@ Briss 2.0 is intended to be a GUI Update for the Briss PDF cropping tool.
 
 Briss 2.0 is based on Briss 0.9 which is located at sourceforge: http://sourceforge.net/projects/briss/
 
+### Things that are done by now
+- Small refinements on gui which improve the workflow
+- Better file chooser than provided by swing
+- Added support for drag and drop
+
+### Images
+
+Startscreen with drag and drop support:
+![Image of BRISS 2.0 Startscreen](img/startScreen.png)
+Cropping view:
+![Image of BRISS 2.0 Cropping View](img/croppingView.png)
+
 
 ## Build instructions
 
-* To build the project you need two additional libraries, put them in the "lib" sub directory:
- * itext from http://itextpdf.com/ (current version is itextpdf-5.5.4.jar)
- * jpedal from http://www.jpedal.org/. jpedal was updated to javaFX. This version no longer works with Swing. Get a working jar from the Briss 0.9 release (jpedal-4.74b27.jar)
- 
-* Eclipse is used for development, just import as "Existing Project into Workspace"
+### Prerequisites
+Make sure you have JDK 8 installed as currently only this JDK version is supported.
+
+### Build
+To build, run the following command:
+
+```
+./gradlew distZip
+```
+
+You can find the built version in `build/distributions`
 
 # Briss 0.9 Notes
 
@@ -30,7 +48,7 @@ should be cropped by creating a overlay of similar pages (=>all pages within a p
 ## General
  * Homepage : http://sourceforge.net/projects/briss/
  * License: GPLv3
- * Author: Gerhard Aigner (gerhard.aigner@gmail.com
+ * Author: Gerhard Aigner (gerhard.aigner@gmail.com)
  * Requirements: Java 6
  * Operating systems: Windows, Linux, MacOSX
  * This software uses two libraries to render and crop PDF files: 
@@ -42,11 +60,11 @@ should be cropped by creating a overlay of similar pages (=>all pages within a p
 You can run the application by executing following command in terminal:
 
 ```
-java -jar briss-0.9.jar
+.\bin\Briss-2.0.bat
 ```
 or
 ```
-java -jar briss-0.9.jar cropthis.pdf
+.\bin\Briss-2.0.bat cropthis.pdf
 ```
 
 (The second line comes in handy if you want shortlinks for pdf editing) 
@@ -58,15 +76,22 @@ If you prefer command line and trust the basic automatic detection algorithm
 use it this way (can be batched!):
 
 ```
-java -jar briss-0.9.jar -s [SOURCEFILE] [-d [DESTINATIONFILE]]
+.\bin\Briss-2.0.bat -s [SOURCEFILE] [-d [DESTINATIONFILE]]
 ```
 Example:
 ```
-java -jar briss-0.9.jar -s dogeatdog.pdf -d dogcrop.pdf
-java -jar briss-0.9.jar -s dogeatdog.pdf 
+.\bin\Briss-2.0.bat -s dogeatdog.pdf -d dogcrop.pdf
+.\bin\Briss-2.0.bat -s dogeatdog.pdf
 ```
 the second line will create the cropped pdf into dogeatdog_cropped.pdf
 
+To split according to columns/rows, respectively use the `--split-col` and `--split-row` arguments. For example:
+```
+.\bin\Briss-2.0.bat -s dogeatdog.pdf -d dogcrop.pdf --split-col
+```
+
+Splitting columns will try to split the pdf into two columns. Splitting rows will try to split the pdf into two parts
+by cutting pages in half.
 
 
 ## Instructions
@@ -86,8 +111,16 @@ the second line will create the cropped pdf into dogeatdog_cropped.pdf
 * Select a Rectangle with ctrl + mouse click. Then copy (ctrl-c) and paste it into another cluster.
 * Use hotcorners to make a crop rectangle smaller or bigger
 
+# Dev instructions
 
 ## Problems
 * If you want to crop really big files it might be necessary to start briss with 
 an additional parameter: "-Xms128m -Xmx1024m" (complete call would look like: 
 "java -Xms128m -Xmx1024m -jar briss-0.9.jar")
+
+Run the application with the following command:
+
+```
+./gradlew run
+```
+
