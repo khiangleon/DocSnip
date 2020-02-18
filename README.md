@@ -1,3 +1,8 @@
+DocSnip is intended to be a document snipping tool that has in-built memory storage properties and OCR functionalities, with a user-friendly GUI for easy-to-use and accurate data extraction.
+
+DocSnip is modified from the existing Briss 2.0 PDF cropping tool.
+
+
 # Briss 2.0
 
 Briss 2.0 is intended to be a GUI Update for the Briss PDF cropping tool.
@@ -108,8 +113,14 @@ by cutting pages in half.
 
 # Dev instructions
 
+## Problems
+* If you want to crop really big files it might be necessary to start briss with 
+an additional parameter: "-Xms128m -Xmx1024m" (complete call would look like: 
+"java -Xms128m -Xmx1024m -jar briss-0.9.jar")
+
 Run the application with the following command:
 
 ```
 ./gradlew run
 ```
+
