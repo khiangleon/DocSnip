@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = 'at.laborg.briss.Briss'
+mainClassName = 'at.laborg.docSnip.DocSnip'
 applicationDefaultJvmArgs = ["-Xms128m", "-Xmx1024m"]
 
 repositories {
