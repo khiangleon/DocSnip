@@ -31,7 +31,6 @@ import org.jpedal.exception.PdfException;
 
 final class DocSnipTransferHandler extends TransferHandler {
 
-	private static final long serialVersionUID = 1L;
 	private final DocSnipGUI docSnipGUI;
 
 	DocSnipTransferHandler(final DocSnipGUI docSnipGUI) {

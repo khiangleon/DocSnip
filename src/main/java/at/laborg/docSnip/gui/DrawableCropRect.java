@@ -8,9 +8,7 @@ import java.awt.Rectangle;
 
 public class DrawableCropRect extends Rectangle {
 
-	private static final long serialVersionUID = -8836495805271750636L;
-
-	static final int CORNER_DIMENSION = 20;
+	static final int CORNER_DIMENSION = 10;
 
 	private boolean selected = false;
 

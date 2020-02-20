@@ -63,7 +63,6 @@ import javafx.stage.FileChooser;
 
 public class DocSnipGUI extends JFrame implements PropertyChangeListener, ComponentListener {
 
-    private static final long serialVersionUID = 5623134571633965275L;
     private static final int DEFAULT_HEIGHT = 600;
     private static final int DEFAULT_WIDTH = 800;
     private static final int MIN_HEIGHT = 400;

@@ -15,7 +15,6 @@ import javax.swing.SwingUtilities;
  */
 public class WrapLayout extends FlowLayout {
 
-	private static final long serialVersionUID = -4521504101150638641L;
 	private Dimension preferredLayoutSize;
 
 	/**

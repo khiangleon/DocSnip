@@ -28,12 +28,11 @@ import javax.swing.JScrollPane;
 
 public class HelpDialog extends JDialog {
 
-	private static final long serialVersionUID = 7185998226653190141L;
 	private static final String HELP_FILE_PATH = "/help.html";
 
 	public HelpDialog(final Frame owner, final String title, final Dialog.ModalityType modalityType) {
 		super(owner, title, modalityType);
-		setBounds(232, 232, 500, 800);
+		setBounds(232, 232, 500, 500);
 
 		String helpText = "";
 
@@ -43,7 +42,7 @@ public class HelpDialog extends JDialog {
 			int cnt = is.read(buf);
 			helpText = new String(buf, 0, cnt);
 		} catch (IOException e) {
-			helpText = "Couldn't read the help file... Please contact gerhard.aigner@gmail.com";
+			helpText = "Couldn't read the help file... ";
 		}
 
 		JEditorPane jEditorPane = new JEditorPane("text/html", helpText);

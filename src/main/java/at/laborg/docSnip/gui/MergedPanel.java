@@ -52,7 +52,6 @@ import at.laborg.docSnip.model.CropFinder;
 
 public class MergedPanel extends JPanel {
 
-	private static final long serialVersionUID = -7279998240425762265L;
 	// last drawn rectangle. a "ghosting" rectangle will
 	// help the user to create the two equally sized crop rectangles
 	private static DrawableCropRect curCrop;
